@@ -34,13 +34,14 @@
         /* border: 1px solid red; */
         text-decoration: none;
         color: #5e6267;
+        font-weight: bold;
     }
 
     #product{
         width: 90%;
         margin: auto;
         display: flex;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         text-align: center;
         height: 200px;
         justify-content: space-between;
@@ -48,27 +49,137 @@
     }
 
     #product > div{
-        width: 90%;
-        border: 1px solid red;
-        display: flex;
-        justify-content: space-between;
+        width: 70%;
+        /* border: 1px solid red; */
+        padding: 20px;
+    }
+
+    #product > div img{
+        width: 100%;
+    }
+
+    #product > div p{
+        color: rgb(245, 102, 102);
+        font-weight: bold;
     }
     
+    #product > div a{
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
     #advert{
         width: 90%;
         margin: auto;
         display: flex;
         margin-top: 50px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     #advert>img{
         width: 100%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         border-radius: 15px;
         margin-left: 20px;
     }
 
+    #search{
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: auto;
+    }
+
+    #search> p> b{
+        color: #329591;
+    }
+
+    #search1{
+        width: 60%;
+        height: 40px;
+        border-radius: 25px;
+        padding-left: 30px;
+        margin-left: 290px;
+    }
+
+    #Offers{
+        width: 90%;
+        margin: auto;
+        /* border: 1px solid red; */
+        margin-top: 20px;
+    }
+
+    #offers > h2{
+        color: #30363c;
+    }
+
+    #offers2{
+        width: 90%;
+        margin: auto;
+        /* border: 1px solid red; */
+        display: flex;
+    }
+
+    #offers2> div{
+        display: flex;
+        border: 1px solid burlywood;
+        height: 50px;
+        padding: 10px;
+        border-color: #d7dae0;
+        margin-right: 50px;
+        border-radius: 10px;
+    }
+
+    #Newlaunch{
+        width: 90%;
+        margin: auto;
+    }
+
+    #Newlaunch>h1{
+        color: #30363c;
+    }
+
+    #Newlaunch p{
+        margin-top: -15px;
+        color: #a7abaf;
+    }
+
+    #newlaunch2{
+        /* border: 1px solid orange; */
+        height: 312px;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #newlaunch2> div{
+        width: 80%;
+        /* border: 1px solid blue; */
+        padding: 20px;
+    }
+
+    #newlaunch2> div p:nth-child(3){
+        /* border: 1px solid red; */
+        color: #a8a8a9;
+    }
+
+    #newlaunch2> div>img{
+        width: 100%;
+        height: 150px;
+        /* margin-left: 5px; */
+    }
+
+    #newPrc{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -25px;
+    }
+
+    #newPrc p:nth-child(2){
+        color: rgb(245, 102, 102);
+    }
 </style>
 <body>
     <div id="navbar">
@@ -83,27 +194,127 @@
             <a href="">Cart</a>
         </div>
     </div>
+
+
+    <div id="search">
+        <h2>What are you looking for?</h2>
+        <p>Order with prescription. 
+           <b> UPLOAD NOW ></b></p>
+    </div>
+    <div >
+        <input type="text" id="search1" placeholder="Search for Medicine">
+    </div>
+
+
     <div id="product">
         <div>
-            <img src="" alt="">
-            
+            <img src="https://assets.pharmeasy.in/apothecary/images/medicine_ff.webp?dim=720x0" alt="">
+            <a href="">Medicine</a>
+            <p>UPTO 20% OFF</p>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/labtest_ff.webp?dim=256x0" alt="">
+            <a href="">Lab Test</a>
+            <p>UPTO 70% OFF</p>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/healthcare_ff.webp?dim=256x0" alt="">
+            <a href="">Healthcare</a>
+            <p>UPTO 60% OFF</p>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/health_blogs_ff.webp?dim=256x0" alt="">
+            <a href="">Health Blogs</a>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/plus_ff.webp?dim=256x0" alt="">
+            <a href="">PLUS</a>
+            <p>SAVE 5% EXTRA</p>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/offers_ff.webp?dim=256x0" alt="">
+            <a href="">Offers</a>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/offers_1_ff.webp?dim=256x0" alt="">
+            <a href="">Surgeries</a>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/value_store.png?dim=256x0" alt="">
+            <a href="">Value Store</a>
+            <p>UPTO 50% OFF</p>
+        </div>
     </div>
+
     <div id="advert">
         <img src="https://cdn01.pharmeasy.in/dam/banner/banner/37176137470-POCK27.jpg" alt="">
         <img src="https://cdn01.pharmeasy.in/dam/banner/banner/51e34800f6d-HURRAY.jpg" alt="">
         <img src="https://cdn01.pharmeasy.in/dam/banner/banner/cf9086f1406-LABTEST450_onetimrfree.jpg" alt="">
         <img src="https://cdn01.pharmeasy.in/dam/banner/banner/c0034c14fe6-634X274.jpg" alt="">
+        <img src="https://cdn01.pharmeasy.in/dam/banner/banner/2faeb574eaa-slipper.jpg" alt="">
     </div>
+
     <div id="Offers">
         <h2>Offers Just For You</h2>
+    </div>
+    <div id="offers2">
+        <div>
+            <img src="https://cms-contents.pharmeasy.in/offer/028f38c99b9-PELOGO.jpg?dim=1440x0" alt="">
+            <p>Flat 25% off on first 3 medicine orders.</p>
+        </div>
+        <div>
+            <img src="https://cms-contents.pharmeasy.in/offer/028f38c99b9-PELOGO.jpg?dim=1440x0" alt="">
+            <p>Flat 27% off + up to Rs.5000 surprise cashback</p>
+        </div>
+        <div>
+            <img src="" alt="">
+            <p>Log in to view more offers</p>
+        </div>
+    </div>
+
+    <div id="Newlaunch">
+        <h1>New Launches</h1>
+        <p>New wellness range just for you!</p>
+    </div>
+    <div id="newlaunch2">
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/P71315/pharmeasy-vitamin-b-complex-with-folic-acid-improves-energy-heart-eye-health-bottle-of-60-2-1659444053.jpg?dim=1440x0" alt="">
+                <p>Pharmeasy Vitamin B Complex With Folic Acid Biotin 60 Capsule</p>
+                <P>MRP 649.00</P>
+                <div id="newPrc">
+                    <p>324.50</p>
+                    <p> <b> 50% OFF</b></p>
+                </div>
+            </div>
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/D90191/liveasy-wellness-pain-relief-spray-55gm-2-1659963248.jpg?dim=1440x0" alt="">
+                <p>Liveasy Wellness Pain Relief Spray 55gm</p>
+                <p>MRP 199.00</p>
+            </div>
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/L61031/tvaksh-faceguard-sunscreen-30-spf-30-gm-2-1657783666.jpg?dim=1440x0" alt="">
+                <p>Tvaksh Faceguard Sunsceen 30 spf 30</p>
+                <P>MRP 501.00</P>
+            </div>
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/P89597/nulife-sterile-gloves-65-2-1650464869.jpg?dim=1440x0" alt="">
+                <p>Nulife Sterile Gloves (6.5)</p>
+                <P>MRP 67.00</P>
+            </div>
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/Q67605/mortein-mosquito-killer-liquid-vaporizer-refill-buy-2-get-1-free-pack-2-1641793159.jpg?dim=1440x0" alt="">
+                <p>Mortein Mosquito Killer Liquid Vaporizer refill</p>
+                <P>MRP 154.00</P>
+                <div id="newPrc">
+                    <p>141.68</p>
+                    <p><b> 8% OFF</b></p>
+                </div>
+            </div>
+            <div>
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/L11389/venusia-baby-cream-75g-2-1663052178.jpg?dim=1440x0" alt="">
+                <p>Venusia Baby Cream -75g</p>
+                <p>MRP 275.00</p>
+            </div>
     </div>
 </body>
 </html>
