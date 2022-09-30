@@ -72,15 +72,30 @@ html, body {
  grid-template-rows: repeat(6, 100px);
  gap: 20px;
 }
-
+/* #diffprdt>div >img{
+  width: 33%;
+} */
 #diffprdt> div{
-  border: 1px solid rgb(143, 142, 142);
+  border: 1px solid lightgray;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 5px 10px 10px;
   border-radius: 5px;
-  gap: 5px;
+}
+
+/* #diffprdt>a> div{
+  border: 1px solid lightgray;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 10px 10px;
+  border-radius: 5px;
+} */
+
+#diffprdt> div > p{
+  /* line-height: 50px; */
+  margin-top: 30px;
 }
 
 .shopSafty{
@@ -112,4 +127,47 @@ html, body {
   color: #4f585e;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.brands{
+  width: 70%;
+  margin: auto;
+  margin-left: 200px;
+  line-height: 1.5;
+  color: #4f585e;
+}
+
+#footerContainer{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#footerContainer> div{
+  border: 1px solid red;
+  width: 30%;
+}
+
+#footerContainer> div> div{
+  border: 1px solid black;
+}
+
+#footerContainer> div> div:nth-child(2){
+  font-family: Open Sans,sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #4f585e;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#footerContainer> div> div:nth-child(3){
+  line-height: 1.5;
+
 }
