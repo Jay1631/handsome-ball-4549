@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="health.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="https://kit.fontawesome.com/20ce46492f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=256x0" alt="">
+            <p>Express delivery to <b>400001 Mumbai</b> </p>
+        </div>
+        <div>
+            <input type="text" id="search" placeholder="Search for Medicine and Healthcare items">
+        </div>
+        <div>
+            <a href="">Hello, Log in</a>
+            <a href="">Offers</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </div>
+
+    <div id="navbar2">
+        <div>
+            <p>Medicine</p>
+            <p>Healthcare</p>
+            <p>Lab Tests</p>
+            <p>Offers</p>
+            <p>PLUS</p>
+            <p>Health Blogs</p>
+        </div>
+    </div>
+
+    
+    <div>
+        <h1>Item In Cart</h1>
+    </div>
+    <div id="prdtcart" style="display: flex;">
+        <div>
+            <table>
+                <thead></thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div>
+                <p>Cart Value:</p>
+                <p>Delivery Charges:</p>
+                <P>Amount To be Paid</P>
+            </div>
+            <div>
+                <p class="subTotal">₹</p>
+                <p>Free</p>
+                <p class="subTotal1">₹</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var cartArr = JSON.parse(localStorage.getItem('cartItems'));
+    console.log(cartArr);
+    
+    cart(cartArr);
+    function cart(cartArr){
+    document.querySelector('tbody').innerHTML = "";
+    // document.getElementById('no_items').textContent = cartArr.length || 0;
+    // document.querySelector('.subTotal').textContent="₹"+ total || 0;
+    // document.querySelector('#subTotal_sum').textContent="₹"+total || 0;
+    cartArr.map(function(data,index){
+        var tr = document.createElement('tr');
+        tr.style.borderColor="1px solid red"
+        
+        var td1 = document.createElement('td');
+        var image = document.createElement('img');
+        image.style.width = '130px';
+        image.style.height = '150px';
+        image.style.marginBottom = '15px'
+        image.setAttribute('src',data.image);
+        td1.append(image);
+
+        var td2 = document.createElement('td');
+        td2.style.verticalAlign = 'Top';
+        td2.style.paddingLeft = '10px'
+        
+        var title = document.createElement('h5');
+        title.textContent = data.title;
+        title.style.fontSize = '14px';
+        title.style.fontWeight = '700';
+         
+        
+        var quantity = document.createElement('p');
+        quantity.textContent = 'Qty: 1';
+        quantity.style.fontSize = '13px'
+        quantity.style.paddingTop = '-10px'
+
+        var remove1 = document.createElement('button');
+        remove1.textContent = 'Remove';
+        remove1.style.margin = '49px 0px 0px 0px';
+        remove1.style.fontSize = '12px';
+        remove1.style.color = 'grey';
+        remove1.style.border = 'none';
+        remove1.addEventListener('click',function(){
+            deleteItem(index);
+        });
+
+        
+        td2.append(title,remove1,quantity);
+
+        var td3 = document.createElement('td');
+        td3.textContent = "₹"+data.payment;
+        td3.style.verticalAlign = 'Top';
+        td3.style.paddingLeft = '20px'
+        td3.style.fontWeight = '500';
+
+        tr.append(td1,td2,td3);
+        document.querySelector("tbody").append(tr);
+    });
+
+    
+}
+    let total = cartArr.reduce(function(acc, cv){
+        return acc + Number(cv.payment)
+    }, 0)
+    document.querySelector('.subTotal').textContent="₹"+ total;
+    document.querySelector('.subTotal1').textContent="₹"+ total;
+
+    function deleteItem(index){
+        cartArr.splice(index, 1)
+        localStorage.setItem("cartItems", JSON.stringify(cartArr));
+        cart(cartArr);
+    }
+</script>

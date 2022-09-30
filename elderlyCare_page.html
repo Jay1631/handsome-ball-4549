@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="health.css">
+    <link rel="stylesheet" href="elderlyCare_page.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <img src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=256x0" alt="">
+            <p>Express delivery to <b>400001 Mumbai</b> </p>
+        </div>
+        <div>
+            <input type="text" id="search" placeholder="Search for Medicine and Healthcare items">
+        </div>
+        <div>
+            <a href="">Hello, Log in</a>
+            <a href="">Offers</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </div>
+
+    <div id="navbar2">
+        <div>
+            <p>Medicine</p>
+            <p>Healthcare</p>
+            <p>Lab Tests</p>
+            <p>Offers</p>
+            <p>PLUS</p>
+            <p>Health Blogs</p>
+        </div>
+    </div>
+    <div id="container">
+        <div>
+            <p>Home ></p>
+            <p> All categories > </p>
+            <p> Elderly Care </p>
+        </div>
+
+        <div>
+            <h1 style="width: 33%;">
+                Filter
+            </h1>
+            <h1 style="width: 33%;">
+                Elderly Care
+            </h1>
+            <div style="display: flex;  width: 33%; justify-content: space-between; padding-top: 20px;">
+                <p>Sort By:</p>
+                <select name="" id="" style="height: 40px; width: 250px; ">
+                    <option value="">popularity</option>
+                    <option value="">Price High to Low</option>
+                    <option value="">Price Low to High</option>
+                    <option value="">Discount</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="product">
+            <div>
+
+            </div>
+            <div id="product2">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let arr_data = JSON.parse(localStorage.getItem("products")) || []
+    let cartArr = JSON.parse(localStorage.getItem("cartArr")) || []
+
+    display(arr_data);
+
+    function display(arr_data) {
+        document.querySelector("#product2").textContent = "";
+        arr_data.map(function (item) {
+
+            let item_div = document.createElement("div")
+            item_div.setAttribute("id", "items_div");
+
+            let image = document.createElement("img")
+            
+            image.setAttribute("src", item.image);
+
+            let title_div = document.createElement("div")
+            title_div.setAttribute("id", "title_div");
+
+            let title = document.createElement("h3")
+            title.textContent = item.title;
+
+            let price_div = document.createElement("div")
+            price_div.setAttribute("id", "price_div");
+
+            let price = document.createElement("h3")
+            price.textContent = "MRP₹" + item.price;
+
+            let discount_div = document.createElement("div")
+            discount_div.setAttribute("id", "discount_div");
+
+            let discount = document.createElement("h3")
+
+            discount.textContent = item.discount + "%";
+
+            let payment_div = document.createElement("div")
+            payment_div.setAttribute("id", "payment_div");
+
+            let payment = document.createElement("h3")
+            payment.setAttribute("id", "payment")
+            payment.textContent = "₹" + item.payment;
+
+
+            let cart_div = document.createElement('div');
+            cart_div.setAttribute('id','cart_div')
+
+            let cartBtn = document.createElement('button');
+            cartBtn.setAttribute("id", "cartBtn");
+            cartBtn.textContent = "Add to cart";
+            cartBtn.addEventListener("click", function(){
+                addToCart(item);
+            })
+
+
+            let quantity = document.createElement('select');
+
+            let default_opt = document.createElement('option');
+            default_opt.textContent = 'Qty 1';
+            let opt_2 = document.createElement('option');
+            opt_2.textContent = '2';
+            let opt_3 = document.createElement('option');
+            opt_3.textContent = '3';
+            let opt_4 = document.createElement('option');
+            opt_4.textContent = '4';
+            let opt_5 = document.createElement('option');
+            opt_5.textContent = '5';
+
+            quantity.append(default_opt,opt_2,opt_3,opt_4,opt_5)
+
+            
+
+            price_div.append(price,discount);
+            title_div.append(title);
+            payment_div.append(payment);
+            // discount_div.append(discount);
+            cart_div.append(cartBtn,quantity)
+
+            item_div.append(image, title_div, price_div, discount_div, payment_div,cart_div);
+            document.querySelector("#product2").append(item_div)
+        });
+
+    }
+
+    function addToCart(item){
+        cartArr.push(item);
+        alert("product added to cart successfully");
+        localStorage.setItem("cartItems", JSON.stringify(cartArr));
+    }
+</script>
