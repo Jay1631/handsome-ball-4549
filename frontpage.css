@@ -217,6 +217,10 @@ html, body {
     justify-content: space-between;
 }
 
+#newlaunch2 > div:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 #newlaunch2> div{
     width: 80%;
     /* border: 1px solid blue; */
@@ -242,4 +246,57 @@ html, body {
 
 #newPrc p:nth-child(2){
     color: rgb(245, 102, 102);
+}
+
+#applink{
+    border: 1px solid lightgrey;
+    background-color: #d7faf8;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    /* background-image: url(https://assets.pharmeasy.in/apothecary/images/downloadBanner.webp?dim=1440x0&q=100); */
+}
+
+
+#back{
+    /* border: 1px solid greenyellow; */
+    width: 23%;
+    margin: auto;
+    text-align: center;
+    padding: 25px 5px 25px 5px;
+}
+
+#footer{
+    width: 95%;
+    margin: auto;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    background-color: #eef4ff;
+    height: auto;
+    
+}
+
+#footer> div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer> div > div{
+    width: 23%;
+    /* border: 1px solid red; */
+    margin: 50px 30px 30px 30px;
+}
+
+#footer> div:nth-child(2){
+    width: 95%;
+    margin: auto;
+}
+
+#footer> div:nth-child(3){
+    width: 95%;
+    margin: auto;
+    height: 30px;
+    /* margin-bottom: 50px; */
+    /* border: 1px solid red; */
 }
