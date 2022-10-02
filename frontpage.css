@@ -62,7 +62,7 @@ html, body {
 }
 
 #openSide:checked ~ #sidebarLogIn {
-    transform: translateX(0); 
+    transform: translateX(430px); 
 }
 
 #sidebarLogIn div:nth-child(1){
