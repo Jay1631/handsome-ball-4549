@@ -16,8 +16,8 @@
             <img src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=256x0" alt="">
             <p>Express delivery to <b>400001 Mumbai</b> </p>
         </div>
-        <div>
-            <input type="text" id="search" placeholder="Search for Medicine and Healthcare items">
+        <div id="searchHealth">
+            <input type="text" id="search_health" placeholder="Search for Medicine and Healthcare items">
         </div>
         <div>
             <a href="">Hello, Log in</a>
@@ -38,21 +38,21 @@
     </div>
     <div id="container">
         <div>
-            <p>Home ></p>
+            <a href="index.html" style="text-decoration: none; margin-top: 15px;">Home ></a>
             <p> All categories > </p>
             <p> Elderly Care </p>
         </div>
 
         <div>
-            <h1 style="width: 33%;">
+            <h1 style="width: 33%; color: rgb(99, 99, 99);">
                 Filter
             </h1>
-            <h1 style="width: 33%;">
+            <h1 style="width: 33%; color: rgb(99, 99, 99); ">
                 Elderly Care
             </h1>
             <div style="display: flex;  width: 33%; justify-content: space-between; padding-top: 20px;">
                 <p>Sort By:</p>
-                <select name="" id="" style="height: 40px; width: 250px; ">
+                <select name="" id="" style="height: 40px; width: 250px; border-radius: 5px; ">
                     <option value="">popularity</option>
                     <option value="">Price High to Low</option>
                     <option value="">Price Low to High</option>
@@ -70,6 +70,8 @@
             </div>
         </div>
     </div>
+
+    
 
 </body>
 
@@ -89,7 +91,7 @@
             item_div.setAttribute("id", "items_div");
 
             let image = document.createElement("img")
-            
+            image.setAttribute("id","pdcimg" );
             image.setAttribute("src", item.image);
 
             let title_div = document.createElement("div")
